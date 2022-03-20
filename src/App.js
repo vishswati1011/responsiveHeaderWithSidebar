@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import Dashboard from './component/header/header2';
+import Function from './component/demoFile2'
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
 
 function App() {
+   var token="token";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+     {token==="token"?
+      <Dashboard/>
+      :<Function/>}   
+     
+      </Router>
     </div>
   );
 }
