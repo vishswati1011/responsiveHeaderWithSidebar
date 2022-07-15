@@ -91,7 +91,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-           Rock Pros USA
+        Header
           </Typography>
         </Toolbar>
       </AppBar>

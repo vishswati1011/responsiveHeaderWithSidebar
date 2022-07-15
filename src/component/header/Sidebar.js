@@ -13,6 +13,7 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import logo from '../image/logo.png'
+import { NavLink } from 'react-router-dom';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -112,10 +113,11 @@ export default function SideBar({open,parentCallback}) {
           ))}
         </List>
         <Divider />
+
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        <NavLink to='/jobsiteFrom'>
             <ListItemButton
-              key={text}
+              key="jobSite"
               sx={{
                 minHeight: 48,
                 justifyContent: open ? 'initial' : 'center',
@@ -129,12 +131,34 @@ export default function SideBar({open,parentCallback}) {
                   justifyContent: 'center',
                 }}
               >
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                
               </ListItemIcon>
-              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary={"Jibside"} sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          ))}
+            </NavLink>
+            <NavLink to='/linkedin'>
+            <ListItemButton
+              key="Login with linkedIn"
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                }}
+              >
+                
+              </ListItemIcon>
+              <ListItemText primary={"Login with linkedIn"} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+            </NavLink>
         </List>
+       
       </Drawer>
       </ThemeProvider>   
   
